@@ -15,7 +15,7 @@ Use the `something` property on an array to test whether the assertion holds for
 [{ a: 'cat' }, { a: 'dog' }].should.include.something.that.deep.equals({ a: 'cow' })
 /* expected an element of [ { a: 'cat' }, { a: 'dog' } ] to deeply equal { a: 'cow' } */
 [{ a: { b: 5 } }].should.include.something.with.deep.property("a.b", 5)
-/* expected an element to have a deep property of a.b which equals 5 */
+/* expected an element of [ { a: { b : 5 } } ] to have a deep property of a.b that equals 5 */
 ```
 
 You are free to choose the syntactic variant you like most:
