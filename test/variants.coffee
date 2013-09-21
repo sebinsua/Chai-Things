@@ -1,7 +1,7 @@
 # This file describes the behavior of `something` variants
 
-describe "the array [{ a: 1 }, { b: 2 }]", ->
-  array = [{ a: 1 }, { b: 2 }]
+describe "the array [{ a: 1 }, { b: 2 }, { c: { d: 5, e: 4, f: 9 } }]", ->
+  array = [{ a: 1 }, { b: 2 }, { c: { d: 5, e: 4, f: 9 } }]
 
   it "should include a thing", ->
     array.should.include.a.thing()
@@ -23,6 +23,16 @@ describe "the array [{ a: 1 }, { b: 2 }]", ->
 
   it "should include some that deep equal { b: 2 }", ->
     array.should.include.some.that.deep.equal { b: 2 }
+
+  it "should not include some that deeper equal { c: { d: 5 } }", ->
+    array.should.not.include.some.that.deep.equal { c: { d: 5} }
+
+  it "should include some that have a deep property 'c.d'", ->
+    array.should.include.some.with.deep.property 'c.d'
+
+  it "should include some that have a deep property 'c.d' equal to 5", ->
+    array.should.include.some.with.deep.property 'c.d', 5
+
 
 describe "the empty array", ->
   emptyArray = []

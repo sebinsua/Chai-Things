@@ -116,6 +116,25 @@ describe "the array [{ a: 1 }, { b: 2 }]", ->
     array.should.not.include.something.with.property('b', 3)
 
 
+describe "the array [{ c: { d: 5, e: 4, f: { z : 11} } }]", ->
+  array = [{ c: { d: 5, e: 4, f: { z: 11 } } }]
+
+  it "should include something with a deep property 'c'", ->
+    array.should.include.something.with.deep.property('c')
+
+  it "should include something with a deep property 'c.d' of 5", ->
+    array.should.include.something.with.deep.property('c.d', 5)
+
+  it "should include something with a deep property 'c.e'", ->
+    array.should.include.something.with.deep.property('c.e')
+
+  it "should include something with a deep property 'c.f.z' of 11", ->
+    array.should.include.something.with.deep.property('c.f.z', 11)
+
+  it "should not include something with a deep property 'c.z'", ->
+    array.should.not.include.something.with.deep.property('c.z')
+
+
 describe "the array [{ a: 1 }, { a: 1 }]", ->
   array = [{ a: 1 }, { a: 1 }]
 
