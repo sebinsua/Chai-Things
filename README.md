@@ -4,7 +4,7 @@ Chai Things adds support to [Chai](http://chaijs.com/) for assertions on array e
 ## Examples
 
 ### Something
-Use the `something` property on an array to test whether the assertion holds for one of its elements.
+Use the `something` property on an array to test whether _any_ Chai assertion holds for one of its elements.
 
 ```javascript
 // Although they are equal, two different { a: 'cat' } objects are not the same
